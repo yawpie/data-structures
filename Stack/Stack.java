@@ -2,7 +2,7 @@ package Stack;
 
 public class Stack {
     Node top = null;
-    int size = 0;
+    private int length = 0;
 
     public void push(int data) {
         Node newNode = new Node(data);
@@ -12,18 +12,29 @@ public class Stack {
             newNode.next = top;
             top = newNode;
         }
-        size++;
+        length++;
+    }
+
+    public boolean isEmpty() {
+        if (top == null) {
+            return true;
+        }
+        return false;
     }
 
     public int pop() {
         int data = top.data;
         top = top.next;
-        size--;
+        length--;
         return data;
     }
 
     public int peek() {
         return top.data;
+    }
+
+    public int length() {
+        return length;
     }
 
     public void print() {
@@ -36,6 +47,6 @@ public class Stack {
     }
 
     public int size() {
-        return size;
+        return length;
     }
 }
