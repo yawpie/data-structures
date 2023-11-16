@@ -2,7 +2,7 @@ package Queue;
 
 public class Queue {
     Node first = null;
-    int size = 0;
+    private int size = 0;
 
     public void enqueue(int data) {
         Node newNode = new Node(data);
@@ -24,6 +24,17 @@ public class Queue {
         first = first.next;
         size--;
         return current.data;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        if (first == null) {
+            return true;
+        }
+        return false;
     }
 
     public int front() {
