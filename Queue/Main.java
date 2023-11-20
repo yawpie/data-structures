@@ -11,8 +11,8 @@ public class Main {
         antri.enqueue(0);
         antri.enqueue(1);
         antri.enqueue(2);
-        System.out.println(antri.size);
-        while (antri.size != 0) {
+        System.out.println(antri.size());
+        while (antri.size() != 0) {
             System.out.println(antri.dequeue());
         }
     }

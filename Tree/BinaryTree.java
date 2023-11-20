@@ -7,6 +7,7 @@ public class BinaryTree {
         root = insertRec(root, key);
     }
 
+    // method rekursif buat insert
     private Node insertRec(Node root, int key) {
         if (root == null) {
             root = new Node(key);
@@ -34,5 +35,21 @@ public class BinaryTree {
         }
         return searchRec(root.left, key);
 
+    }
+
+    // prefix traversal
+    public void print() {
+        printRec(root);
+    }
+
+    private void printRec(Node in) {
+        System.out.println(in.key);
+        if (in.left != null) {
+            printRec(in.left);
+        }
+        if (in.right != null) {
+            printRec(in.right);
+        }
+        return;
     }
 }
